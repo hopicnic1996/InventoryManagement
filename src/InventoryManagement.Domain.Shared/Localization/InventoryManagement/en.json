@@ -3,6 +3,18 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Permission:ProductGroup": "ProductGroup",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:ProductGroup": "MenuProductGroup",
+    "ProductGroup": "ProductGroup",
+    "ProductGroupproductGroupName": "ProductGroupproductGroupName",
+    "ProductGroupproductGroupDescription": "ProductGroupproductGroupDescription",
+    "CreateProductGroup": "CreateProductGroup",
+    "EditProductGroup": "EditProductGroup",
+    "ProductGroupDeletionConfirmationMessage": "Are you sure to delete the productGroup {0}?",
+    "SuccessfullyDeleted": "Successfully deleted"
   }
 }

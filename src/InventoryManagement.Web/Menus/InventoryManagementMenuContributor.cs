@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
+using InventoryManagement.Permissions;
 using InventoryManagement.Localization;
 using InventoryManagement.MultiTenancy;
 using Volo.Abp.Identity.Web.Navigation;
@@ -45,5 +46,11 @@ public class InventoryManagementMenuContributor : IMenuContributor
 
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.ProductGroup.Default))
+            {
+                context.Menu.AddItem(
+                    new ApplicationMenuItem(InventoryManagementMenus.ProductGroup, l["Menu:ProductGroup"], "/Categories/ProductGroup/ProductGroup")
+                );
+            }
     }
 }

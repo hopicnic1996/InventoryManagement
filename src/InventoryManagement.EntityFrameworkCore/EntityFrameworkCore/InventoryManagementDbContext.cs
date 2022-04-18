@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -12,6 +12,8 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using InventoryManagement.Categories.ProductGroup;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace InventoryManagement.EntityFrameworkCore;
 
@@ -51,6 +53,7 @@ public class InventoryManagementDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+        public DbSet<ProductGroup> ProductGroups { get; set; }
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
         : base(options)
@@ -81,5 +84,17 @@ public class InventoryManagementDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+
+            builder.Entity<ProductGroup>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "ProductGroups", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(x => x.productGroupName).IsRequired();
+                b.HasIndex(x => x.productGroupName).IsUnique();
+                
+
+                /* Configure more properties here */
+            });
     }
 }

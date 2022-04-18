@@ -3,6 +3,18 @@
   "texts": {
     "Menu:Home": "الرئيسية",
     "Welcome": "مرحبا",
-    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io."
+    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io.",
+    "Permission:ProductGroup": "ProductGroup",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:ProductGroup": "MenuProductGroup",
+    "ProductGroup": "ProductGroup",
+    "ProductGroupproductGroupName": "ProductGroupproductGroupName",
+    "ProductGroupproductGroupDescription": "ProductGroupproductGroupDescription",
+    "CreateProductGroup": "CreateProductGroup",
+    "EditProductGroup": "EditProductGroup",
+    "ProductGroupDeletionConfirmationMessage": "Are you sure to delete the productGroup {0}?",
+    "SuccessfullyDeleted": "Successfully deleted"
   }
 }

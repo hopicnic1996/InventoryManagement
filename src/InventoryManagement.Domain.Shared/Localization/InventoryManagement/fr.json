@@ -1,8 +1,20 @@
 {
- "culture": "fr",
- "texts": {
-  "Menu:Home": "Accueil",
-  "Welcome": "Bienvenue",
-  "LongWelcomeMessage": "Bienvenue dans l'application. Il s'agit d'un projet de démarrage basé sur le framework ABP. Pour plus d'informations, visitez abp.io."
- }
+  "culture": "fr",
+  "texts": {
+    "Menu:Home": "Accueil",
+    "Welcome": "Bienvenue",
+    "LongWelcomeMessage": "Bienvenue dans l'application. Il s'agit d'un projet de démarrage basé sur le framework ABP. Pour plus d'informations, visitez abp.io.",
+    "Permission:ProductGroup": "ProductGroup",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:ProductGroup": "MenuProductGroup",
+    "ProductGroup": "ProductGroup",
+    "ProductGroupproductGroupName": "ProductGroupproductGroupName",
+    "ProductGroupproductGroupDescription": "ProductGroupproductGroupDescription",
+    "CreateProductGroup": "CreateProductGroup",
+    "EditProductGroup": "EditProductGroup",
+    "ProductGroupDeletionConfirmationMessage": "Are you sure to delete the productGroup {0}?",
+    "SuccessfullyDeleted": "Successfully deleted"
+  }
 }

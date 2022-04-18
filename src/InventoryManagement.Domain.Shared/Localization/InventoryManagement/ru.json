@@ -3,6 +3,18 @@
   "texts": {
     "Menu:Home": "Главная",
     "Welcome": "Добро пожаловать",
-    "LongWelcomeMessage": "Добро пожаловать в приложение. Этот запущенный проект основан на фреймворке ABP. Для получения дополнительной информации посетите сайт abp.io."
+    "LongWelcomeMessage": "Добро пожаловать в приложение. Этот запущенный проект основан на фреймворке ABP. Для получения дополнительной информации посетите сайт abp.io.",
+    "Permission:ProductGroup": "ProductGroup",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:ProductGroup": "MenuProductGroup",
+    "ProductGroup": "ProductGroup",
+    "ProductGroupproductGroupName": "ProductGroupproductGroupName",
+    "ProductGroupproductGroupDescription": "ProductGroupproductGroupDescription",
+    "CreateProductGroup": "CreateProductGroup",
+    "EditProductGroup": "EditProductGroup",
+    "ProductGroupDeletionConfirmationMessage": "Are you sure to delete the productGroup {0}?",
+    "SuccessfullyDeleted": "Successfully deleted"
   }
 }

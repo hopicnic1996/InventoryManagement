@@ -1,4 +1,4 @@
-﻿namespace InventoryManagement.Web.Menus;
+namespace InventoryManagement.Web.Menus;
 
 public class InventoryManagementMenus
 {
@@ -7,4 +7,5 @@ public class InventoryManagementMenus
 
     //Add your menu items here...
 
+        public const string ProductGroup = Prefix + ".ProductGroup";
 }
