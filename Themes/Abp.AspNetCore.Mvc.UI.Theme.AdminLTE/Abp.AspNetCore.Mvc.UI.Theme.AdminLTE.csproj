@@ -22,7 +22,11 @@
     <EmbeddedResource Include="Localization\**\*.json" />
     <Content Remove="Localization\**\*.json" />
     <EmbeddedResource Include="wwwroot\**\*" />
+    <Compile Remove="Pages\Identity\**" />
+    <Content Remove="Pages\Identity\**" />
     <Content Remove="wwwroot\**\*" />
+    <EmbeddedResource Remove="Pages\Identity\**" />
+    <None Remove="Pages\Identity\**" />
   </ItemGroup>
 
   <ItemGroup>

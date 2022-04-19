@@ -45,11 +45,11 @@ $(function () {
                 }
             },
             {
-                title: l('ProductGroupproductGroupName'),
+                //title: l('ProductGroupproductGroupName'),
                 data: "productGroupName"
             },
             {
-                title: l('ProductGroupproductGroupDescription'),
+                //title: l('ProductGroupproductGroupDescription'),
                 data: "productGroupDescription"
             },
         ]

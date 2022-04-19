@@ -42,7 +42,19 @@
             </abp-column>
         </abp-row>
     </abp-card-header>
-    <abp-card-body>
+    @*<abp-card-body>
         <abp-table striped-rows="true" id="ProductGroupTable" class="nowrap"/>
+    </abp-card-body>*@
+
+    <abp-card-body>
+        <abp-table striped-rows="true" id="ProductGroupTable" class="nowrap">
+            <thead>
+                <tr>
+                    <th>@L["Actions"]</th>
+                    <th>@L["ProductGroupproductGroupName"]</th>
+                    <th>@L["ProductGroupproductGroupDescription"]</th>
+                </tr>
+            </thead>
+        </abp-table>
     </abp-card-body>
 </abp-card>
