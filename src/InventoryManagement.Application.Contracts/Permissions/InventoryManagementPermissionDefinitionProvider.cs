@@ -16,6 +16,11 @@ public class InventoryManagementPermissionDefinitionProvider : PermissionDefinit
             productGroupPermission.AddChild(InventoryManagementPermissions.ProductGroup.Create, L("Permission:Create"));
             productGroupPermission.AddChild(InventoryManagementPermissions.ProductGroup.Update, L("Permission:Update"));
             productGroupPermission.AddChild(InventoryManagementPermissions.ProductGroup.Delete, L("Permission:Delete"));
+
+            var unitPermission = myGroup.AddPermission(InventoryManagementPermissions.Unit.Default, L("Permission:Unit"));
+            unitPermission.AddChild(InventoryManagementPermissions.Unit.Create, L("Permission:Create"));
+            unitPermission.AddChild(InventoryManagementPermissions.Unit.Update, L("Permission:Update"));
+            unitPermission.AddChild(InventoryManagementPermissions.Unit.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

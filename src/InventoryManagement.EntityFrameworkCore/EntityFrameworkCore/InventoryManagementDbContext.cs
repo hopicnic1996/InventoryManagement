@@ -14,6 +14,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using InventoryManagement.Categories.ProductGroup;
 using Volo.Abp.EntityFrameworkCore.Modeling;
+using InventoryManagement.Categories.Unit;
 
 namespace InventoryManagement.EntityFrameworkCore;
 
@@ -54,6 +55,7 @@ public class InventoryManagementDbContext :
 
     #endregion
         public DbSet<ProductGroup> ProductGroups { get; set; }
+        public DbSet<Unit> Units { get; set; }
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
         : base(options)
@@ -92,6 +94,16 @@ public class InventoryManagementDbContext :
                 b.ConfigureByConvention();
                 b.Property(x => x.productGroupName).IsRequired();
                 b.HasIndex(x => x.productGroupName).IsUnique();
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<Unit>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "Units", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
                 
 
                 /* Configure more properties here */

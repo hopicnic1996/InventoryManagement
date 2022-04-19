@@ -8,4 +8,5 @@ public class InventoryManagementMenus
     //Add your menu items here...
 
         public const string ProductGroup = Prefix + ".ProductGroup";
+        public const string Unit = Prefix + ".Unit";
 }

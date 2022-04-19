@@ -14,4 +14,12 @@ public static class InventoryManagementPermissions
             public const string Create = Default + ".Create";
             public const string Delete = Default + ".Delete";
         }
+
+        public class Unit
+        {
+            public const string Default = GroupName + ".Unit";
+            public const string Update = Default + ".Update";
+            public const string Create = Default + ".Create";
+            public const string Delete = Default + ".Delete";
+        }
 }
