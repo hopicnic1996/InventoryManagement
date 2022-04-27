@@ -1,3 +1,4 @@
+using InventoryManagement.Products.Product;
 using InventoryManagement.Categories.Unit;
 using InventoryManagement.Categories.ProductGroup;
 using System;
@@ -44,6 +45,7 @@ public class InventoryManagementEntityFrameworkCoreModule : AbpModule
             options.AddDefaultRepositories(includeAllEntities: true);
                 options.AddRepository<ProductGroup, ProductGroupRepository>();
                 options.AddRepository<Unit, UnitRepository>();
+                options.AddRepository<Product, ProductRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

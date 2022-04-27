@@ -9,4 +9,5 @@ public class InventoryManagementMenus
 
         public const string ProductGroup = Prefix + ".ProductGroup";
         public const string Unit = Prefix + ".Unit";
+        public const string Product = Prefix + ".Product";
 }
