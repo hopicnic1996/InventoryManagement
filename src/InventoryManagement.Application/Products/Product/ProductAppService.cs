@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using InventoryManagement.Categories.Unit;
 using InventoryManagement.Permissions;
 using InventoryManagement.Products.Product.Dtos;
 using Volo.Abp.Application.Dtos;
@@ -16,10 +19,22 @@ namespace InventoryManagement.Products.Product
         protected override string DeletePolicyName { get; set; } = InventoryManagementPermissions.Product.Delete;
 
         private readonly IProductRepository _repository;
+        private readonly IUnitRepository _unitRepository;
         
-        public ProductAppService(IProductRepository repository) : base(repository)
+        public ProductAppService(IProductRepository repository, IUnitRepository unitRepository) : base(repository)
         {
             _repository = repository;
+            _unitRepository = unitRepository;
         }
+
+        public async Task<ListResultDto<ProductUnitLookUpDto>> GetUnitLookupAsync()
+        {
+            var units = await _unitRepository.GetListAsync();
+
+            return new ListResultDto<ProductUnitLookUpDto>(
+                ObjectMapper.Map<List<Unit>, List<ProductUnitLookUpDto>>(units)
+            );
+        }
+
     }
 }
