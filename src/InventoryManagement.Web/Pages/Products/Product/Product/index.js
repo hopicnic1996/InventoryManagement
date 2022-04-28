@@ -3,7 +3,12 @@ $(function () {
     var l = abp.localization.getResource('InventoryManagement');
 
     var service = inventoryManagement.products.product.product;
-    var createModal = new abp.ModalManager(abp.appPath + 'Products/Product/Product/CreateModal');
+    //var createModal = new abp.ModalManager(abp.appPath + 'Products/Product/Product/CreateModal');
+    var createModal = new abp.ModalManager({
+        viewUrl: abp.appPath + 'Products/Product/Product/CreateModal',
+        //scriptUrl: abp.appPath + 'Pages/Products/Product/Product/createModal.js'
+        modalClass: 'productCreateModal',
+    });
     var editModal = new abp.ModalManager(abp.appPath + 'Products/Product/Product/EditModal');
 
     var dataTable = $('#ProductTable').DataTable(abp.libs.datatables.normalizeConfiguration({
@@ -48,26 +53,26 @@ $(function () {
                 title: l('ProductProductName'),
                 data: "productName"
             },
-            {
-                title: l('ProductProductGroupId'),
-                data: "productGroupId"
-            },
+            //{
+            //    title: l('ProductProductGroupId'),
+            //    data: "productGroupId"
+            //},
             {
                 title: l('ProductProductGroupName'),
                 data: "productGroupName"
             },
-            {
-                title: l('ProductUnitId'),
-                data: "unitId"
-            },
+            //{
+            //    title: l('ProductUnitId'),
+            //    data: "unitId"
+            //},
             {
                 title: l('ProductUnitName'),
                 data: "unitName"
             },
-            {
-                title: l('ProductReferenceUnitId'),
-                data: "referenceUnitId"
-            },
+            //{
+            //    title: l('ProductReferenceUnitId'),
+            //    data: "referenceUnitId"
+            //},
             {
                 title: l('ProductReferenceUnitName'),
                 data: "referenceUnitName"

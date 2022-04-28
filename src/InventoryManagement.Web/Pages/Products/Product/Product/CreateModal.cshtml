@@ -7,7 +7,13 @@
 @{
     Layout = null;
 }
-<abp-dynamic-form abp-model="ViewModel" data-ajaxForm="true" asp-page="CreateModal">
+
+@section scripts
+{
+    <abp-script src="/Pages/Products/Product/Product/createModal.js" />
+}
+
+@*<abp-dynamic-form abp-model="ViewModel" data-ajaxForm="true" asp-page="CreateModal">
     <abp-modal>
         <abp-modal-header title="@L["CreateProduct"].Value"></abp-modal-header>
         <abp-modal-body>
@@ -15,4 +21,49 @@
         </abp-modal-body>
         <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
     </abp-modal>
-</abp-dynamic-form>
+</abp-dynamic-form>*@
+
+<form abp-model="ViewModel" data-ajaxForm="true" asp-page="CreateModal">
+    <abp-modal size="Large">
+        <abp-modal-header title="@L["CreateProduct"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="ViewModel.ProductName"/>
+            <abp-select asp-for="ViewModel.ProductGroupId" asp-items="Model.ProductGroupListItems">
+                <option value="">-</option>
+            </abp-select>
+            <abp-row>
+                <abp-column class="col-7">
+                    <abp-select asp-for="ViewModel.UnitId" asp-items="Model.UnitListItems">
+                        <option value="">-</option>
+                    </abp-select>
+                </abp-column>
+                <abp-column class="col-1 text-center">
+                    <abp-row>
+                        &nbsp;
+                    </abp-row>
+                </abp-column>
+                <abp-column>
+                    <abp-row>
+                        <label class="form-label">&nbsp;</label>
+                        
+                    </abp-row>
+                    <abp-row>
+                        <abp-button class="form-control" id="addReferenceUnitBtn" button-type="Secondary">@L["AddReferenceUnit"]</abp-button>
+                        <abp-button class="form-control" id="removeReferenceUnitBtn" button-type="Secondary" hidden>@L["RemoveReferenceUnit"]</abp-button>
+                    </abp-row>
+                </abp-column>
+            </abp-row>
+            <abp-row id="referenceUnitForm" hidden>
+                <abp-column class="col-7">
+                    <abp-select asp-for="ViewModel.ReferenceUnitId" asp-items="Model.ReferenceUnitListItems">
+                        <option value="">-</option>
+                    </abp-select>
+                </abp-column>
+                <abp-column class="col-4">
+                    <abp-input asp-for="ViewModel.ReferenceUnitQuantity"/>
+                </abp-column>
+            </abp-row>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

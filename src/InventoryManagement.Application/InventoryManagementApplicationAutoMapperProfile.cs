@@ -22,5 +22,6 @@ public class InventoryManagementApplicationAutoMapperProfile : Profile
             CreateMap<Product, ProductDto>();
             CreateMap<CreateUpdateProductDto, Product>(MemberList.Source);
             CreateMap<Unit, ProductUnitLookUpDto>(MemberList.Source);
+            CreateMap<ProductGroup, ProductGroupLookUpDto>(MemberList.Source);
     }
 }
