@@ -24,7 +24,7 @@
     "EditUnit": "Edit Unit",
     "UnitDeletionConfirmationMessage": "Are you sure to delete the unit {0}?",
     "Permission:Product": "Product",
-    "Menu:Product": "MenuProduct",
+    "Menu:Product": "Products",
     "Product": "Product",
     "ProductProductName": "Product name",
     "ProductProductGroupId": "ProductProductGroupId",
@@ -38,6 +38,7 @@
     "EditProduct": "EditProduct",
     "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?",
     "AddReferenceUnit": "Add reference unit",
-    "RemoveReferenceUnit": "Clear reference unit"
+    "RemoveReferenceUnit": "Clear reference unit",
+    "Menu:Categories": "Categories"
   }
 }

@@ -53,26 +53,14 @@ $(function () {
                 title: l('ProductProductName'),
                 data: "productName"
             },
-            //{
-            //    title: l('ProductProductGroupId'),
-            //    data: "productGroupId"
-            //},
             {
                 title: l('ProductProductGroupName'),
                 data: "productGroupName"
             },
-            //{
-            //    title: l('ProductUnitId'),
-            //    data: "unitId"
-            //},
             {
                 title: l('ProductUnitName'),
                 data: "unitName"
             },
-            //{
-            //    title: l('ProductReferenceUnitId'),
-            //    data: "referenceUnitId"
-            //},
             {
                 title: l('ProductReferenceUnitName'),
                 data: "referenceUnitName"
@@ -80,7 +68,7 @@ $(function () {
             {
                 title: l('ProductReferenceUnitQuantity'),
                 data: "referenceUnitQuantity"
-            },
+            }
         ]
     }));
 

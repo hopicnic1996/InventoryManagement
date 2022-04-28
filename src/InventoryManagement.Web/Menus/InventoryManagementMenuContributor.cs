@@ -46,18 +46,17 @@ public class InventoryManagementMenuContributor : IMenuContributor
 
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
-            if (await context.IsGrantedAsync(InventoryManagementPermissions.ProductGroup.Default))
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.ProductGroup.Default) || await context.IsGrantedAsync(InventoryManagementPermissions.Unit.Default))
             {
                 context.Menu.AddItem(
-                    new ApplicationMenuItem(InventoryManagementMenus.ProductGroup, l["Menu:ProductGroup"], "/Categories/ProductGroup/ProductGroup")
+                    new ApplicationMenuItem("InventoryManagementMenus.Categories", l["Menu:Categories"])
+                    .AddItem(
+                        new ApplicationMenuItem(name: InventoryManagementMenus.ProductGroup, displayName: l["Menu:ProductGroup"], url: "/Categories/ProductGroup/ProductGroup", requiredPermissionName: InventoryManagementPermissions.ProductGroup.Default))
+                    .AddItem(
+                        new ApplicationMenuItem(name: InventoryManagementMenus.Unit, displayName: l["Menu:Unit"], url: "/Categories/Unit/Unit", requiredPermissionName: InventoryManagementPermissions.Unit.Default))
                 );
             }
-            if (await context.IsGrantedAsync(InventoryManagementPermissions.Unit.Default))
-            {
-                context.Menu.AddItem(
-                    new ApplicationMenuItem(InventoryManagementMenus.Unit, l["Menu:Unit"], "/Categories/Unit/Unit")
-                );
-            }
+            
             if (await context.IsGrantedAsync(InventoryManagementPermissions.Product.Default))
             {
                 context.Menu.AddItem(
