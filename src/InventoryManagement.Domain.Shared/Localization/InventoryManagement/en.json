@@ -41,13 +41,14 @@
     "RemoveReferenceUnit": "Clear reference unit",
     "Menu:Categories": "Categories",
     "Permission:Inventory": "Inventory",
-    "Menu:Inventory": "MenuInventory",
+    "Menu:Inventory": "Inventory",
     "Inventory": "Inventory",
-    "InventoryInventoryName": "InventoryInventoryName",
-    "InventoryAddress": "InventoryAddress",
-    "InventoryDescription": "InventoryDescription",
-    "CreateInventory": "CreateInventory",
-    "EditInventory": "EditInventory",
-    "InventoryDeletionConfirmationMessage": "Are you sure to delete the inventory {0}?"
+    "InventoryInventoryName": "Inventory Name",
+    "InventoryAddress": "Address",
+    "InventoryDescription": "Description",
+    "CreateInventory": "Create Inventory",
+    "EditInventory": "Edit",
+    "InventoryDeletionConfirmationMessage": "Are you sure to delete the inventory {0}?",
+    "Permission:InventoryManagement": "Inventory Management"
   }
 }

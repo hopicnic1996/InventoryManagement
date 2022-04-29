@@ -17,7 +17,7 @@ public class InventoryManagementPermissionDefinitionProvider : PermissionDefinit
         context.GetPermissionOrNull(TenantManagementPermissions.Tenants.ManageFeatures).IsEnabled = false;
         context.GetPermissionOrNull(TenantManagementPermissions.Tenants.ManageConnectionStrings).IsEnabled = false;
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var myGroup = context.AddGroup(InventoryManagementPermissions.GroupName);
+        var myGroup = context.AddGroup(InventoryManagementPermissions.GroupName, L("Permission:InventoryManagement"));
         //Define your own permissions here. Example:
         //myGroup.AddPermission(InventoryManagementPermissions.MyPermission1, L("Permission:MyPermission1"));
 
