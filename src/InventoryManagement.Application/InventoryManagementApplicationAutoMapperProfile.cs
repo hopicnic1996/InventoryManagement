@@ -4,6 +4,8 @@ using InventoryManagement.Categories.Unit;
 using InventoryManagement.Categories.Unit.Dtos;
 using InventoryManagement.Products.Product;
 using InventoryManagement.Products.Product.Dtos;
+using InventoryManagement.Inventories.Inventory;
+using InventoryManagement.Inventories.Inventory.Dtos;
 using AutoMapper;
 
 namespace InventoryManagement;
@@ -23,5 +25,7 @@ public class InventoryManagementApplicationAutoMapperProfile : Profile
             CreateMap<CreateUpdateProductDto, Product>(MemberList.Source);
             CreateMap<Unit, ProductUnitLookUpDto>(MemberList.Source);
             CreateMap<ProductGroup, ProductGroupLookUpDto>(MemberList.Source);
+            CreateMap<Inventory, InventoryDto>();
+            CreateMap<CreateUpdateInventoryDto, Inventory>(MemberList.Source);
     }
 }

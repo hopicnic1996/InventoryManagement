@@ -1,6 +1,7 @@
 using InventoryManagement.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
+using Volo.Abp.TenantManagement;
 
 namespace InventoryManagement.Permissions;
 
@@ -8,6 +9,14 @@ public class InventoryManagementPermissionDefinitionProvider : PermissionDefinit
 {
     public override void Define(IPermissionDefinitionContext context)
     {
+        //Disable Tenants Permission
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.Default).IsEnabled = false;
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.Create).IsEnabled = false;
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.Update).IsEnabled = false;
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.Delete).IsEnabled = false;
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.ManageFeatures).IsEnabled = false;
+        context.GetPermissionOrNull(TenantManagementPermissions.Tenants.ManageConnectionStrings).IsEnabled = false;
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         var myGroup = context.AddGroup(InventoryManagementPermissions.GroupName);
         //Define your own permissions here. Example:
         //myGroup.AddPermission(InventoryManagementPermissions.MyPermission1, L("Permission:MyPermission1"));
@@ -26,6 +35,11 @@ public class InventoryManagementPermissionDefinitionProvider : PermissionDefinit
             productPermission.AddChild(InventoryManagementPermissions.Product.Create, L("Permission:Create"));
             productPermission.AddChild(InventoryManagementPermissions.Product.Update, L("Permission:Update"));
             productPermission.AddChild(InventoryManagementPermissions.Product.Delete, L("Permission:Delete"));
+
+            var inventoryPermission = myGroup.AddPermission(InventoryManagementPermissions.Inventory.Default, L("Permission:Inventory"));
+            inventoryPermission.AddChild(InventoryManagementPermissions.Inventory.Create, L("Permission:Create"));
+            inventoryPermission.AddChild(InventoryManagementPermissions.Inventory.Update, L("Permission:Update"));
+            inventoryPermission.AddChild(InventoryManagementPermissions.Inventory.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

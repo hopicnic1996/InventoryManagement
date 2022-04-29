@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +12,21 @@ namespace InventoryManagement.Inventories.Inventory
         public string InventoryName { get; set; }
         public string Address { get; set; }
         public string Description { get; set; }
+
+        protected Inventory()
+        {
+        }
+
+        public Inventory(
+            Guid id,
+            string inventoryName,
+            string address,
+            string description
+        ) : base(id)
+        {
+            InventoryName = inventoryName;
+            Address = address;
+            Description = description;
+        }
     }
 }

@@ -36,6 +36,15 @@
     "ProductReferenceUnitQuantity": "ProductReferenceUnitQuantity",
     "CreateProduct": "CreateProduct",
     "EditProduct": "EditProduct",
-    "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?"
+    "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?",
+    "Permission:Inventory": "Inventory",
+    "Menu:Inventory": "MenuInventory",
+    "Inventory": "Inventory",
+    "InventoryInventoryName": "InventoryInventoryName",
+    "InventoryAddress": "InventoryAddress",
+    "InventoryDescription": "InventoryDescription",
+    "CreateInventory": "CreateInventory",
+    "EditInventory": "EditInventory",
+    "InventoryDeletionConfirmationMessage": "Are you sure to delete the inventory {0}?"
   }
 }

@@ -16,6 +16,7 @@ using InventoryManagement.Categories.ProductGroup;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using InventoryManagement.Categories.Unit;
 using InventoryManagement.Products.Product;
+using InventoryManagement.Inventories.Inventory;
 
 namespace InventoryManagement.EntityFrameworkCore;
 
@@ -58,6 +59,7 @@ public class InventoryManagementDbContext :
         public DbSet<ProductGroup> ProductGroups { get; set; }
         public DbSet<Unit> Units { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
         : base(options)
@@ -115,6 +117,16 @@ public class InventoryManagementDbContext :
             builder.Entity<Product>(b =>
             {
                 b.ToTable(InventoryManagementConsts.DbTablePrefix + "Products", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<Inventory>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "Inventories", InventoryManagementConsts.DbSchema);
                 b.ConfigureByConvention(); 
                 
 

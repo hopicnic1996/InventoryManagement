@@ -39,6 +39,15 @@
     "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?",
     "AddReferenceUnit": "Add reference unit",
     "RemoveReferenceUnit": "Clear reference unit",
-    "Menu:Categories": "Categories"
+    "Menu:Categories": "Categories",
+    "Permission:Inventory": "Inventory",
+    "Menu:Inventory": "MenuInventory",
+    "Inventory": "Inventory",
+    "InventoryInventoryName": "InventoryInventoryName",
+    "InventoryAddress": "InventoryAddress",
+    "InventoryDescription": "InventoryDescription",
+    "CreateInventory": "CreateInventory",
+    "EditInventory": "EditInventory",
+    "InventoryDeletionConfirmationMessage": "Are you sure to delete the inventory {0}?"
   }
 }

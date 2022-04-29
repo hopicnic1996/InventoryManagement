@@ -4,6 +4,8 @@ using InventoryManagement.Categories.Unit.Dtos;
 using InventoryManagement.Web.Pages.Categories.Unit.Unit.ViewModels;
 using InventoryManagement.Products.Product.Dtos;
 using InventoryManagement.Web.Pages.Products.Product.Product.ViewModels;
+using InventoryManagement.Inventories.Inventory.Dtos;
+using InventoryManagement.Web.Pages.Inventories.Inventory.Inventory.ViewModels;
 using AutoMapper;
 
 namespace InventoryManagement.Web;
@@ -19,5 +21,7 @@ public class InventoryManagementWebAutoMapperProfile : Profile
             CreateMap<CreateEditUnitViewModel, CreateUpdateUnitDto>();
             CreateMap<ProductDto, CreateEditProductViewModel>();
             CreateMap<CreateEditProductViewModel, CreateUpdateProductDto>();
+            CreateMap<InventoryDto, CreateEditInventoryViewModel>();
+            CreateMap<CreateEditInventoryViewModel, CreateUpdateInventoryDto>();
     }
 }
