@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,9 +11,8 @@ using Volo.Abp.MultiTenancy;
 namespace InventoryManagement.Categories.WarehouseManager
 {
     [Table("Unitses")]
-    public class Units : FullAuditedEntity<Guid>, IMultiTenant
+    public class Units : FullAuditedEntity<Guid>
     {
-        public Guid? TenantId { get; set; }
 		[Required]
 		[StringLength(UnitsConsts.MaxNameLength, MinimumLength = UnitsConsts.MinNameLength)]
 		public virtual string Name { get; set; }
@@ -26,5 +25,23 @@ namespace InventoryManagement.Categories.WarehouseManager
 
 		[StringLength(UnitsConsts.MaxNoteLength, MinimumLength = UnitsConsts.MinNoteLength)]
 		public virtual string Note { get; set; }
+
+        protected Units()
+        {
+        }
+
+        public Units(
+            Guid id,
+            string name,
+            string symbol,
+            int level,
+            string note
+        ) : base(id)
+        {
+            Name = name;
+            Symbol = symbol;
+            Level = level;
+            Note = note;
+        }
 	}
 }

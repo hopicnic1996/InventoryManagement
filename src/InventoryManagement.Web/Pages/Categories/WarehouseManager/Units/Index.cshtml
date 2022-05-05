@@ -1,0 +1,48 @@
+@page
+@using InventoryManagement.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using InventoryManagement.Web.Pages.Categories.WarehouseManager.Units
+@using InventoryManagement.Localization
+@using InventoryManagement.Web.Menus
+@model IndexModel
+@inject IPageLayout PageLayout
+@inject IHtmlLocalizer<InventoryManagementResource> L
+@inject IAuthorizationService Authorization
+@{
+    PageLayout.Content.Title = L["Units"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Units"].Value);
+    PageLayout.Content.MenuItemName = InventoryManagementMenus.Units;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Categories/WarehouseManager/Units/index.js" />
+}
+@section styles
+{
+    <abp-style src="/Pages/Categories/WarehouseManager/Units/index.css"/>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Units"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+			    @if (await Authorization.IsGrantedAsync(InventoryManagementPermissions.Units.Create))
+                {
+                <abp-button id="NewUnitsButton"
+                            text="@L["CreateUnits"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="UnitsTable" class="nowrap"/>
+    </abp-card-body>
+</abp-card>

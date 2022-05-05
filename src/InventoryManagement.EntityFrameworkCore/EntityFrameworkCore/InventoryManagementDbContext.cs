@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -12,6 +12,8 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using InventoryManagement.Categories.WarehouseManager;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace InventoryManagement.EntityFrameworkCore;
 
@@ -51,6 +53,9 @@ public class InventoryManagementDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+        public DbSet<Units> Units { get; set; }
+        public DbSet<UnitsOfGoods> UnitsOfGoods { get; set; }
+        public DbSet<Goods> Goods { get; set; }
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
         : base(options)
@@ -81,5 +86,35 @@ public class InventoryManagementDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+
+            builder.Entity<Units>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "Units", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<UnitsOfGoods>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "UnitsOfGoods", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<Goods>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "Goods", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
     }
 }

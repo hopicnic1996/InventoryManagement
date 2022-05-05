@@ -1,4 +1,4 @@
-﻿using InventoryManagement.Localization;
+using InventoryManagement.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
@@ -11,6 +11,21 @@ public class InventoryManagementPermissionDefinitionProvider : PermissionDefinit
         var myGroup = context.AddGroup(InventoryManagementPermissions.GroupName);
         //Define your own permissions here. Example:
         //myGroup.AddPermission(InventoryManagementPermissions.MyPermission1, L("Permission:MyPermission1"));
+
+            var unitsPermission = myGroup.AddPermission(InventoryManagementPermissions.Units.Default, L("Permission:Units"));
+            unitsPermission.AddChild(InventoryManagementPermissions.Units.Create, L("Permission:Create"));
+            unitsPermission.AddChild(InventoryManagementPermissions.Units.Update, L("Permission:Update"));
+            unitsPermission.AddChild(InventoryManagementPermissions.Units.Delete, L("Permission:Delete"));
+
+            var unitsOfGoodsPermission = myGroup.AddPermission(InventoryManagementPermissions.UnitsOfGoods.Default, L("Permission:UnitsOfGoods"));
+            unitsOfGoodsPermission.AddChild(InventoryManagementPermissions.UnitsOfGoods.Create, L("Permission:Create"));
+            unitsOfGoodsPermission.AddChild(InventoryManagementPermissions.UnitsOfGoods.Update, L("Permission:Update"));
+            unitsOfGoodsPermission.AddChild(InventoryManagementPermissions.UnitsOfGoods.Delete, L("Permission:Delete"));
+
+            var goodsPermission = myGroup.AddPermission(InventoryManagementPermissions.Goods.Default, L("Permission:Goods"));
+            goodsPermission.AddChild(InventoryManagementPermissions.Goods.Create, L("Permission:Create"));
+            goodsPermission.AddChild(InventoryManagementPermissions.Goods.Update, L("Permission:Update"));
+            goodsPermission.AddChild(InventoryManagementPermissions.Goods.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

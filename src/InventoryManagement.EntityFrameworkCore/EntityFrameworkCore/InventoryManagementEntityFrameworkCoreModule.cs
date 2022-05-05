@@ -1,4 +1,5 @@
-﻿using System;
+using InventoryManagement.Categories.WarehouseManager;
+using System;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -40,6 +41,9 @@ public class InventoryManagementEntityFrameworkCoreModule : AbpModule
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
+                options.AddRepository<Units, UnitsRepository>();
+                options.AddRepository<UnitsOfGoods, UnitsOfGoodsRepository>();
+                options.AddRepository<Goods, GoodsRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

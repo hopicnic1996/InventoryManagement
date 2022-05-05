@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
+using InventoryManagement.Permissions;
 using InventoryManagement.Localization;
 using InventoryManagement.MultiTenancy;
 using Volo.Abp.Identity.Web.Navigation;
@@ -45,5 +46,23 @@ public class InventoryManagementMenuContributor : IMenuContributor
 
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.Units.Default))
+            {
+                context.Menu.AddItem(
+                    new ApplicationMenuItem(InventoryManagementMenus.Units, l["Menu:Units"], "/Categories/WarehouseManager/Units")
+                );
+            }
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.UnitsOfGoods.Default))
+            {
+                context.Menu.AddItem(
+                    new ApplicationMenuItem(InventoryManagementMenus.UnitsOfGoods, l["Menu:UnitsOfGoods"], "/Categories/WarehouseManager/UnitsOfGoods")
+                );
+            }
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.Goods.Default))
+            {
+                context.Menu.AddItem(
+                    new ApplicationMenuItem(InventoryManagementMenus.Goods, l["Menu:Goods"], "/Categories/WarehouseManager/Goods")
+                );
+            }
     }
 }

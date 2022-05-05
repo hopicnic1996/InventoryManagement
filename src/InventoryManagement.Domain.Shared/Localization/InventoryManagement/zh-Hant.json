@@ -1,8 +1,41 @@
 {
-    "culture": "zh-Hant",
-    "texts": {
-      "Menu:Home": "首頁",
-      "Welcome": "歡迎",
-      "LongWelcomeMessage": "歡迎來到此應用程式. 這是一個基於ABP框架的起始專案. 有關更多訊息, 請瀏覽 abp.io."
-    }
+  "culture": "zh-Hant",
+  "texts": {
+    "Menu:Home": "首頁",
+    "Welcome": "歡迎",
+    "LongWelcomeMessage": "歡迎來到此應用程式. 這是一個基於ABP框架的起始專案. 有關更多訊息, 請瀏覽 abp.io.",
+    "Permission:Units": "Units",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Units": "MenuUnits",
+    "Units": "Units",
+    "UnitsName": "UnitsName",
+    "UnitsSymbol": "UnitsSymbol",
+    "UnitsLevel": "UnitsLevel",
+    "UnitsNote": "UnitsNote",
+    "CreateUnits": "CreateUnits",
+    "EditUnits": "EditUnits",
+    "UnitsDeletionConfirmationMessage": "Are you sure to delete the units {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "Permission:UnitsOfGoods": "UnitsOfGoods",
+    "Menu:UnitsOfGoods": "MenuUnitsOfGoods",
+    "UnitsOfGoods": "UnitsOfGoods",
+    "UnitsOfGoodsUnitId": "UnitsOfGoodsUnitId",
+    "UnitsOfGoodsUnitName": "UnitsOfGoodsUnitName",
+    "UnitsOfGoodsGoodsId": "UnitsOfGoodsGoodsId",
+    "CreateUnitsOfGoods": "CreateUnitsOfGoods",
+    "EditUnitsOfGoods": "EditUnitsOfGoods",
+    "UnitsOfGoodsDeletionConfirmationMessage": "Are you sure to delete the unitsOfGoods {0}?",
+    "Permission:Goods": "Goods",
+    "Menu:Goods": "MenuGoods",
+    "Goods": "Goods",
+    "GoodsGoodsName": "GoodsGoodsName",
+    "GoodsGoodsCode": "GoodsGoodsCode",
+    "GoodsNote": "GoodsNote",
+    "GoodsUnitsOfGoodses": "GoodsUnitsOfGoodses",
+    "CreateGoods": "CreateGoods",
+    "EditGoods": "EditGoods",
+    "GoodsDeletionConfirmationMessage": "Are you sure to delete the goods {0}?"
   }
+}

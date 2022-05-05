@@ -1,0 +1,52 @@
+@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal;
+@using InventoryManagement.Localization
+@inject IHtmlLocalizer<InventoryManagementResource> L
+@model InventoryManagement.Web.Pages.Categories.WarehouseManager.Goods.CreateModalModel
+@{
+    Layout = null;
+}
+@*<abp-dynamic-form abp-model="ViewModel" data-ajaxForm="true" asp-page="CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["CreateGoods"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>*@
+
+<form abp-model="ViewModel" data-ajaxForm="true" asp-page="CreateModal">
+    <abp-modal size="Large">
+        <abp-modal-header title="@L["CreateGoods"].Value"></abp-modal-header>
+         <abp-modal-body>
+             <abp-input asp-for="ViewModel.GoodsName"/>
+             <abp-input asp-for="ViewModel.Note"/>
+             <abp-input asp-for="ViewModel.UnitOfGood"/>
+             <abp-row>
+                 <abp-column>
+                     <abp-table striped-rows="true" id="UnitLeftTable" class="nowrap">
+                         <thead>
+                            <tr>
+                                <th>@L["UnitName"]</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                     </abp-table>
+                 </abp-column>
+                 <abp-column>
+                     <abp-table striped-rows="true" id="UnitRightTable" class="nowrap">
+                         <thead>
+                            <tr>
+                                <th></th>
+                                <th>@L["UnitName"]</th>
+                            </tr>
+                        </thead>
+                     </abp-table>
+                 </abp-column>
+             </abp-row>
+         </abp-modal-body>
+         <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>
