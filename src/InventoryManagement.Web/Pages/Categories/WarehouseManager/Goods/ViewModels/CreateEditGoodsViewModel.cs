@@ -19,7 +19,7 @@ namespace InventoryManagement.Web.Pages.Categories.WarehouseManager.Goods.ViewMo
         [TextArea(Rows = 4)]
         public string Note { get; set; }
 
-        //[HiddenInput]
+        [HiddenInput]
         public string UnitOfGood { get; set; }
     }
 }

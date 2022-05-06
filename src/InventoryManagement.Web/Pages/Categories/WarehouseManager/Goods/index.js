@@ -8,7 +8,11 @@ $(function () {
         viewUrl: abp.appPath + 'Categories/WarehouseManager/Goods/CreateModal',
         modalClass: 'goodsCreateModal',
     });
-    var editModal = new abp.ModalManager(abp.appPath + 'Categories/WarehouseManager/Goods/EditModal');
+    //var editModal = new abp.ModalManager(abp.appPath + 'Categories/WarehouseManager/Goods/EditModal');
+    var editModal = new abp.ModalManager({
+        viewUrl: abp.appPath + 'Categories/WarehouseManager/Goods/EditModal',
+        modalClass: 'goodsEditModal',
+    });
 
     var dataTable = $('#GoodsTable').DataTable(abp.libs.datatables.normalizeConfiguration({
         processing: true,

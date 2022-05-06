@@ -16,5 +16,6 @@ namespace InventoryManagement.Categories.WarehouseManager
     {
         Task<PagedResultDto<UnitsDto>> GetNotSelectedUnitAsync(Guid? GoodsId);
         Task<PagedResultDto<UnitsDto>> GetUnitForLeftTableAsync();
+        Task<PagedResultDto<UnitsDto>> GetSelectedUnitAsync(Guid? GoodsId);
     }
 }

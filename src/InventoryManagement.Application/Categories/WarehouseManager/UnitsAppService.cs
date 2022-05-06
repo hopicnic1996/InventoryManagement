@@ -54,15 +54,42 @@ namespace InventoryManagement.Categories.WarehouseManager
             {
                 if(stringUnitOfGoodsId != "")
                 {
-                    stringUnitOfGoodsId += "," + unit.Id;
+                    stringUnitOfGoodsId += "," + unit.UnitId;
                 }
                 else
                 {
-                    stringUnitOfGoodsId += unit.Id;
+                    stringUnitOfGoodsId += unit.UnitId;
                 }
             }
             IQueryable<Units> queryAble = await _repository.GetQueryableAsync();
             var query = queryAble.Where(x => !stringUnitOfGoodsId.Contains(x.Id.ToString())).ToList();
+
+            var totalCount = query.Count();
+
+            return new PagedResultDto<UnitsDto>(
+                totalCount,
+                ObjectMapper.Map<List<Units>, List<UnitsDto>>(query)
+            );
+        }
+
+        public async Task<PagedResultDto<UnitsDto>> GetSelectedUnitAsync(Guid? GoodsId)
+        {
+            IQueryable<UnitsOfGoods> queryAbleUnitOfGoods = await _unitsOfGoodsRepository.GetQueryableAsync();
+            var queryUnitOfGoods = queryAbleUnitOfGoods.Where(x => x.GoodsId == GoodsId).ToList();
+            var stringUnitOfGoodsId = "";
+            foreach (var unit in queryUnitOfGoods)
+            {
+                if (stringUnitOfGoodsId != "")
+                {
+                    stringUnitOfGoodsId += "," + unit.UnitId;
+                }
+                else
+                {
+                    stringUnitOfGoodsId += unit.UnitId;
+                }
+            }
+            IQueryable<Units> queryAble = await _repository.GetQueryableAsync();
+            var query = queryAble.Where(x => stringUnitOfGoodsId.Contains(x.Id.ToString())).ToList();
 
             var totalCount = query.Count();
 
