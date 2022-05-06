@@ -1,0 +1,48 @@
+@page
+@using InventoryManagement.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using InventoryManagement.Web.Pages.Categories.WarehouseManager.Warehouse
+@using InventoryManagement.Localization
+@using InventoryManagement.Web.Menus
+@model IndexModel
+@inject IPageLayout PageLayout
+@inject IHtmlLocalizer<InventoryManagementResource> L
+@inject IAuthorizationService Authorization
+@{
+    PageLayout.Content.Title = L["Warehouse"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Warehouse"].Value);
+    PageLayout.Content.MenuItemName = InventoryManagementMenus.Warehouse;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Categories/WarehouseManager/Warehouse/index.js" />
+}
+@section styles
+{
+    <abp-style src="/Pages/Categories/WarehouseManager/Warehouse/index.css"/>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Warehouse"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+			    @if (await Authorization.IsGrantedAsync(InventoryManagementPermissions.Warehouse.Create))
+                {
+                <abp-button id="NewWarehouseButton"
+                            text="@L["CreateWarehouse"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="WarehouseTable" class="nowrap"/>
+    </abp-card-body>
+</abp-card>

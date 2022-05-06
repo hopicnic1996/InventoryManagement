@@ -10,4 +10,5 @@ public class InventoryManagementMenus
         public const string Units = Prefix + ".Units";
         public const string UnitsOfGoods = Prefix + ".UnitsOfGoods";
         public const string Goods = Prefix + ".Goods";
+        public const string Warehouse = Prefix + ".Warehouse";
 }

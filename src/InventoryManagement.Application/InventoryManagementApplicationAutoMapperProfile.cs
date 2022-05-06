@@ -1,6 +1,7 @@
 using InventoryManagement.Categories.WarehouseManager;
 using InventoryManagement.Categories.WarehouseManager.Dtos;
 using AutoMapper;
+using Volo.Abp.TenantManagement;
 
 namespace InventoryManagement;
 
@@ -19,5 +20,8 @@ public class InventoryManagementApplicationAutoMapperProfile : Profile
             CreateMap<CreateUpdateGoodsDto, Goods>(MemberList.Source);
 
         CreateMap<Units, LookUpDto>(MemberList.Source);
+        CreateMap<Tenant, LookUpDto>(MemberList.Source);
+            CreateMap<Warehouse, WarehouseDto>();
+            CreateMap<CreateUpdateWarehouseDto, Warehouse>(MemberList.Source);
     }
 }

@@ -56,6 +56,7 @@ public class InventoryManagementDbContext :
         public DbSet<Units> Units { get; set; }
         public DbSet<UnitsOfGoods> UnitsOfGoods { get; set; }
         public DbSet<Goods> Goods { get; set; }
+        public DbSet<Warehouse> Warehouses { get; set; }
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
         : base(options)
@@ -111,6 +112,16 @@ public class InventoryManagementDbContext :
             builder.Entity<Goods>(b =>
             {
                 b.ToTable(InventoryManagementConsts.DbTablePrefix + "Goods", InventoryManagementConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<Warehouse>(b =>
+            {
+                b.ToTable(InventoryManagementConsts.DbTablePrefix + "Warehouses", InventoryManagementConsts.DbSchema);
                 b.ConfigureByConvention(); 
                 
 

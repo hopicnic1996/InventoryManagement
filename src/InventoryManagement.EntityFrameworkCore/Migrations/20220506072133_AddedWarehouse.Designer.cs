@@ -4,6 +4,7 @@ using InventoryManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace InventoryManagement.Migrations
 {
     [DbContext(typeof(InventoryManagementDbContext))]
-    partial class InventoryManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220506072133_AddedWarehouse")]
+    partial class AddedWarehouse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

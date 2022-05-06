@@ -36,6 +36,15 @@
     "GoodsUnitsOfGoodses": "GoodsUnitsOfGoodses",
     "CreateGoods": "CreateGoods",
     "EditGoods": "EditGoods",
-    "GoodsDeletionConfirmationMessage": "Are you sure to delete the goods {0}?"
+    "GoodsDeletionConfirmationMessage": "Are you sure to delete the goods {0}?",
+    "Permission:Warehouse": "Warehouse",
+    "Menu:Warehouse": "MenuWarehouse",
+    "Warehouse": "Warehouse",
+    "WarehouseWarehouseName": "WarehouseWarehouseName",
+    "WarehouseWarehouseAddress": "WarehouseWarehouseAddress",
+    "WarehouseWarehouseNote": "WarehouseWarehouseNote",
+    "CreateWarehouse": "CreateWarehouse",
+    "EditWarehouse": "EditWarehouse",
+    "WarehouseDeletionConfirmationMessage": "Are you sure to delete the warehouse {0}?"
   }
 }

@@ -44,6 +44,7 @@ public class InventoryManagementEntityFrameworkCoreModule : AbpModule
                 options.AddRepository<Units, UnitsRepository>();
                 options.AddRepository<UnitsOfGoods, UnitsOfGoodsRepository>();
                 options.AddRepository<Goods, GoodsRepository>();
+                options.AddRepository<Warehouse, WarehouseRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

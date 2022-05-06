@@ -64,5 +64,11 @@ public class InventoryManagementMenuContributor : IMenuContributor
                     new ApplicationMenuItem(InventoryManagementMenus.Goods, l["Menu:Goods"], "/Categories/WarehouseManager/Goods")
                 );
             }
+            if (await context.IsGrantedAsync(InventoryManagementPermissions.Warehouse.Default))
+            {
+                context.Menu.AddItem(
+                    new ApplicationMenuItem(InventoryManagementMenus.Warehouse, l["Menu:Warehouse"], "/Categories/WarehouseManager/Warehouse")
+                );
+            }
     }
 }

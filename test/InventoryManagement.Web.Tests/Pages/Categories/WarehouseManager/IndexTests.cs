@@ -14,7 +14,7 @@ namespace InventoryManagement.Pages.Categories.WarehouseManager
             // Arrange
 
             // Act
-            var response = await GetResponseAsStringAsync("/Goods");
+            var response = await GetResponseAsStringAsync("/Warehouse");
 
             // Assert
             response.ShouldNotBeNull();
